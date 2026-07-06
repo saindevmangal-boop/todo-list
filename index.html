@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Task Manager Dashboard</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<main class="container">
+			<header class="header">
+				<div class="header-left">
+					<h1>Task Manager</h1>
+					<p class="muted">Mini CRUD with LocalStorage — add, edit, delete, search</p>
+				</div>
+				<!-- theme selector removed -->
+			</header>
+
+			<section class="controls">
+				<div class="add-area">
+					<input id="task-input" type="text" placeholder="Add a new task..." aria-label="Task description" />
+					<select id="priority" aria-label="Priority">
+						<option value="low">Low</option>
+						<option value="medium" selected>Medium</option>
+						<option value="high">High</option>
+					</select>
+					<input id="due-date" type="date" aria-label="Due date" />
+					<button id="add-btn">Add</button>
+				</div>
+
+				<div class="filters">
+					<input id="search" type="search" placeholder="Search tasks..." />
+					<select id="status-filter">
+						<option value="all">All</option>
+						<option value="pending">Pending</option>
+						<option value="completed">Completed</option>
+					</select>
+					<button id="export-btn" title="Export tasks">Export</button>
+					<button id="import-btn" title="Import tasks">Import</button>
+					<input id="import-file" type="file" accept="application/json" style="display:none" />
+				</div>
+			</section>
+
+			<section class="list-area">
+				<ul id="task-list" class="task-list" aria-live="polite"></ul>
+			</section>
+
+			<footer class="footer">
+				<small id="counts"></small>
+			</footer>
+			<div id="snackbar" class="snackbar" aria-live="polite" hidden>
+				<span id="snackbar-msg"></span>
+				
+			</div>
+		</main>
+
+		<script src="script.js"></script>
+	</body>
+</html>
+
